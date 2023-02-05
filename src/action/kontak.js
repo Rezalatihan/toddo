@@ -23,7 +23,7 @@ export const getlistBengkel = () => {
 
     axios({
       method: 'GET',
-      url: 'http://localhost:3000/bengkel',
+      url: 'http://localhost:3500/bengkel',
     })
       .then((response) => {
         //berhasil get api
@@ -66,7 +66,7 @@ export const addBengkel = (data) => {
 
     axios({
       method: 'POST',
-      url: 'http://localhost:3000/bengkel',
+      url: 'http://localhost:3500/bengkel',
       data: data,
     })
       .then((response) => {
@@ -110,7 +110,7 @@ export const deletBengkel = (id) => {
 
     axios({
       method: 'DELETE',
-      url: `http://localhost:3000/bengkel/${id}`,
+      url: `http://localhost:3500/bengkel/${id}`,
     })
       .then((response) => {
         //berhasil get api
@@ -164,7 +164,7 @@ export const updateBengkel = (data) => {
 
     axios({
       method: 'PUT',
-      url: `http://localhost:3000/bengkel/${data.id}`,
+      url: `http://localhost:3500/bengkel/${data.id}`,
       data: data,
     })
       .then((response) => {

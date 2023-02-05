@@ -1,4 +1,4 @@
 import ListBengkel from './ListBengkel';
-import AddBengkel from './addkontak';
+import AddBengkel from './addbengkel';
 
 export { ListBengkel, AddBengkel };
