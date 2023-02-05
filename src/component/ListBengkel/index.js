@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getlistBengkel, deletBengkel, detailBengkel } from '../../action/kontak';
+import Table from 'react-bootstrap/Table';
 
 function ListBengkel() {
   const { getlistBengkelResult, getlistBengkelLoading, getlistBengkelError, deletBengkelResult } = useSelector((state) => state.kontakReducer);
@@ -20,27 +21,26 @@ function ListBengkel() {
   return (
     <div>
       <h1>list barang</h1>
-      <thead>
-        <tr>
-          <td>No</td>
-          <td>Nama Barang</td>
-          <td>Harga Barang</td>
-        </tr>
-      </thead>
-      <tbody>
+      <Table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Barang</th>
+            <th>Harga Barang</th>
+          </tr>
+        </thead>
         {getlistBengkelResult ? (
           getlistBengkelResult.map((bengkel) => {
             return (
-              <div>
+              <tbody>
                 <tr key={bengkel.id}>
-                  <th>{bengkel.id}</th>
-                  <th>{bengkel.nama}</th>
-                  <th>{bengkel.harga}</th>
-
+                  <td>{bengkel.id}</td>
+                  <td>{bengkel.nama}</td>
+                  <td>{bengkel.harga}</td>
                   <button onClick={() => dispatch(deletBengkel(bengkel.id))}>Hapus</button>
                   <button onClick={() => dispatch(detailBengkel(bengkel))}>Edit</button>
                 </tr>
-              </div>
+              </tbody>
             );
           })
         ) : getlistBengkelLoading ? (
@@ -48,7 +48,7 @@ function ListBengkel() {
         ) : (
           <p>{getlistBengkelError ? getlistBengkelError : 'data kosong'}</p>
         )}
-      </tbody>
+      </Table>
     </div>
   );
 }
