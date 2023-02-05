@@ -66,7 +66,7 @@ export const addBengkel = (data) => {
 
     axios({
       method: 'POST',
-      url: 'https://fluffy-intelligent-carpenter.glitch.me/Bengkel/bengkel',
+      url: 'https://fluffy-intelligent-carpenter.glitch.me/Bengkel',
       data: data,
     })
       .then((response) => {
