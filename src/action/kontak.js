@@ -23,7 +23,7 @@ export const getlistBengkel = () => {
 
     axios({
       method: 'GET',
-      url: 'http://localhost:3500/bengkel',
+      url: 'https://fluffy-intelligent-carpenter.glitch.me/Bengkel',
     })
       .then((response) => {
         //berhasil get api
@@ -66,7 +66,7 @@ export const addBengkel = (data) => {
 
     axios({
       method: 'POST',
-      url: 'http://localhost:3500/bengkel',
+      url: 'https://fluffy-intelligent-carpenter.glitch.me/Bengkel/bengkel',
       data: data,
     })
       .then((response) => {
@@ -110,7 +110,7 @@ export const deletBengkel = (id) => {
 
     axios({
       method: 'DELETE',
-      url: `http://localhost:3500/bengkel/${id}`,
+      url: `https://fluffy-intelligent-carpenter.glitch.me/Bengkel/${id}`,
     })
       .then((response) => {
         //berhasil get api
@@ -164,7 +164,7 @@ export const updateBengkel = (data) => {
 
     axios({
       method: 'PUT',
-      url: `http://localhost:3500/bengkel/${data.id}`,
+      url: `https://fluffy-intelligent-carpenter.glitch.me/Bengkel/${data.id}`,
       data: data,
     })
       .then((response) => {
